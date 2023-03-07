@@ -4,4 +4,9 @@ class AppConstants{
   static const String nowPlayingPath = "$baseUrl/movie/now_playing?api_key=$apiKey";
   static const String popularMoviesPath = "$baseUrl/movie/popular?api_key=$apiKey";
   static const String topRatedMoviesPath = "$baseUrl/movie/top_rated?api_key=$apiKey";
+
+
+  static const String baseImageUrl = "https://image.tmdb.org/t/p/w500";
+
+  static String imageUrl(String path) => "$baseImageUrl$path";
 }
