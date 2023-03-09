@@ -4,7 +4,7 @@ import 'package:movies_app/movies_module/domain/entities/movie.dart';
 import 'package:movies_app/movies_module/domain/repository/movies_repository.dart';
 import 'package:movies_app/movies_module/domain/usecases/base_usecase.dart';
 
-class GetPopularMoviesUseCase extends BaseUseCase<List<Movie>> {
+class GetPopularMoviesUseCase extends BaseUseCase<NoParameters, List<Movie>> {
   final MoviesRepository _repository;
 
   GetPopularMoviesUseCase(this._repository);
@@ -12,7 +12,7 @@ class GetPopularMoviesUseCase extends BaseUseCase<List<Movie>> {
 
 
   @override
-  Future<Either<Failure, List<Movie>>> call() async {
+  Future<Either<Failure, List<Movie>>> call(input) async {
     return await _repository.getPopularMovies();
   }
 }
