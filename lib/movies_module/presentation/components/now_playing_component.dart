@@ -3,8 +3,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movies_app/core/services/services_locator.dart';
 import 'package:movies_app/core/utils/app_constants.dart';
+import 'package:movies_app/core/utils/app_strings.dart';
 import 'package:movies_app/core/utils/enums.dart';
 import 'package:movies_app/movies_module/presentation/controller/movies_bloc.dart';
 import 'package:movies_app/movies_module/presentation/controller/movies_state.dart';
@@ -41,10 +41,6 @@ class NowPlayingComponent extends StatelessWidget {
                     return GestureDetector(
                       key: const Key('openMovieMinimalDetail'),
                       onTap: () {
-                        /// TODO : NAVIGATE TO MOVIE DETAILS
-                        print(movie.id);
-                        // ServicesLocator.initGetMovieDetails();
-                        // ServicesLocator.initGetMovieRecommendation();
                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MovieDetailsScreen(id: movie.id)));
                       },
                       child: Stack(
@@ -91,7 +87,7 @@ class NowPlayingComponent extends StatelessWidget {
                                       ),
                                       const SizedBox(width: 4.0),
                                       Text(
-                                        'Now Playing'.toUpperCase(),
+                                        AppString.nowPlaying.toUpperCase(),
                                         style: const TextStyle(
                                           fontSize: 16.0,
                                           color: Colors.white,

@@ -343,16 +343,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:movies_app/core/services/services_locator.dart';
 import 'package:movies_app/core/utils/app_constants.dart';
-import 'package:movies_app/core/utils/app_constants.dart';
-
+import 'package:movies_app/core/utils/app_strings.dart';
 import 'package:movies_app/core/utils/enums.dart';
-
 import 'package:shimmer/shimmer.dart';
-
-import '../../../core/utils/dummy .dart';
 import '../../domain/entities/generes.dart';
 import '../controller/movie_details_bloc.dart';
 
@@ -512,7 +507,7 @@ class MovieDetailContent extends StatelessWidget {
                           ),
                           const SizedBox(height: 8.0),
                           Text(
-                            '${"AppString.genres"}: ${_showGenres(state.movieDetails!.genres)}',
+                            '${AppString.genres}: ${_showGenres(state.movieDetails!.genres)}',
                             style: const TextStyle(
                               color: Colors.white70,
                               fontSize: 12.0,
@@ -532,7 +527,7 @@ class MovieDetailContent extends StatelessWidget {
                       from: 20,
                       duration: const Duration(milliseconds: 500),
                       child: const Text(
-                        "AppString.moreLikeThis",
+                        AppString.moreLikeThis,
                         style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.w500,
