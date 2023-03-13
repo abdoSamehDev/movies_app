@@ -2,10 +2,12 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies_app/core/services/services_locator.dart';
 import 'package:movies_app/core/utils/app_constants.dart';
 import 'package:movies_app/core/utils/enums.dart';
 import 'package:movies_app/movies_module/presentation/controller/movies_bloc.dart';
 import 'package:movies_app/movies_module/presentation/controller/movies_state.dart';
+import 'package:movies_app/movies_module/presentation/screens/movie_details_screen.dart';
 import 'package:shimmer/shimmer.dart';
 
 class TopRatedComponent extends StatelessWidget {
@@ -41,6 +43,10 @@ class TopRatedComponent extends StatelessWidget {
                       child: InkWell(
                         onTap: () {
                           /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          print(movie.id);
+                          // ServicesLocator.initGetMovieDetails();
+                          // ServicesLocator.initGetMovieRecommendation();
+                           Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MovieDetailsScreen(id: movie.id)));
                         },
                         child: ClipRRect(
                           borderRadius:

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/services/services_locator.dart';
 import 'package:movies_app/movies_module/presentation/screens/movies_screen.dart';
-import 'package:movies_app/movies_module/presentation/screens/test.dart';
 
 void main() {
-  ServicesLocator.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  ServicesLocator().init();
   runApp(const MyApp());
 }
 
@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Movies App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.grey.shade900,
       ),
-      home: const TestScreen(),
+      home: const MoviesScreen(),
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:movies_app/movies_module/data/models/genres_model.dart';
-import 'package:movies_app/movies_module/domain/entities/generes.dart';
 import 'package:movies_app/movies_module/domain/entities/movie_details.dart';
 
 class MovieDetailsModel extends MovieDetails {
